@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kurs Mata Uang</title>
+	<style>
+		html {
+			background-image: url("1.jpg");
+		}
+		body {
+			color: #2c3e50;
+			min-height: 90vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		h2 {
+			color: black;
+			letter-spacing: 5px;
+			text-shadow: 5px 5px 8px white;
+			text-decoration: underline;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			background-color: #ecf0f1;
+			padding: 1em;
+			max-width: 500px;
+			width: 100%;
+			border-radius: 1em;
+		}
+
+		.awal {
+			letter-spacing: 3px
+		}
+
+		.dua {
+			letter-spacing: 3px
+		}
+
+		.tiga {
+ 			color: black;
+ 			background-color: white;
+ 			letter-spacing: 3px
+		}
+
+		input, select, button {
+			margin: 1em;
+			padding: 1em;
+			border-radius: 1em;
+			outline: none;
+			border: 1px solid #bdc3c7;
+		}
+
+		.result {
+			text-align: center;
+			letter-spacing: 3px
+		}
+
+		footer {
+			margin-top: 80px
+		}
+	</style>
+</head>
+<body>
+	<h2>Kurs Mata Uang</h2>
+	<div class="container">
+		<p class="awal">Pilih jumlah nominal yang ingin dihitung :</p>
+		<input type="number" class="input" placeholder="Masukan Jumlah">
+		<p class="dua">Pilih mata uang :</p>
+		<select class="kurs">
+			<option value="dollar">Dollar - Rp. 9.915</option>
+			<option value="dollarsg">Dollar Singapore - Rp. 13.472</option>
+			<option value="ringgit">Ringgit Malaysia - Rp. 874</option>
+			<option value="yen">Yen Jepang - Rp. 120</option>
+			<option value="euro">Euro - Rp. 15.888</option>
+			<option value="riyal">Saudi Riyal - Rp. 3.592</option>
+		</select>
+		<button class="hitung">~ Menghitung ~</button>
+		<p class="result">Hasil : </p>
+	</div>
+
+	<script>
+		const input = document.querySelector(".input");
+		const kurs = document.querySelector(".kurs");
+		const btnHitung = document.querySelector(".hitung");
+		const result = document.querySelector(".result");
+
+		btnHitung.addEventListener("click", function() {
+			if (kurs.value == "dollar") {
+				result.innerHTML = "Hasil: " + "Rp." + parseInt(input.value) * 9915;
+			}
+
+			else if (kurs.value == "dollarsg") {
+				result.innerHTML = "Hasil: " + "Rp. " + parseInt(input.value) * 13472;
+			}
+
+			else if (kurs.value == "ringgit") {
+				result.innerHTML = "Hasil: " + "Rp. " + parseInt(input.value) * 874;
+			}
+			else if (kurs.value == "yen") {
+				result.innerHTML = "Hasil: " + "Rp. " +  parseInt(input.value) * 120;
+			}
+			else if (kurs.value == "euro") {
+				result.innerHTML = "Hasil: " + "Rp. " + parseInt(input.value) * 15888;
+			}
+			else if (kurs.value == "riyal") {
+				result.innerHTML = "Hasil: " + "Rp. " + parseInt(input.value) * 3592;
+			}
+		})
+	</script>
+	<footer>
+		<p class="tiga">&#169; 2020 Ninys Revalyna.</p>
+	</footer>
+</body>
+</html>

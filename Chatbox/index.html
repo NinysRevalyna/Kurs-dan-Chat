@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ChatBox</title>
+	<style>
+		html {
+			background-image: url("foto.jpg");
+		}
+
+		.satu {
+			background-color: white;
+			color: black;
+			text-align: center;
+			letter-spacing: 3px
+		}
+		.container {
+			color: white;
+			font-family: arial;
+			width: 500px;
+			border:2px solid #777;
+			background-color: #ddd;
+			line-height: 25px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			border-radius: 5px;
+		}
+		.chat {
+			margin: 0 10px;
+		}
+
+		p {
+			background-color: #1477e4;
+			padding: 10px;
+			padding-right: -50px;
+			border-radius: 5px;
+		}
+
+		.message {
+			text-align: center;
+			margin: 20px 0;
+		}
+
+		input {
+			width: 70%;
+			height: 25px; 
+		}
+
+		button {
+			height: 30px;
+		}
+	</style>
+</head>
+	<header>
+		<h4 class="satu">&#169; 2020 Ninys Revalyna.</h2>
+	</header>
+<body>
+	<div class="container">
+		<div class="chat">
+			<p>Send message below!</p>
+		</div>
+
+		<div class="message">
+			<form method="REQUEST">
+				<input type="text">
+				<button type="submit">Send Message</button>
+			</form>
+		</div>
+	</div>
+<script>
+const text = document.querySelector('p');
+const form = document.querySelector('form');
+
+form.onsubmit = function () {
+	let pesan = document.querySelector('input').value;
+	text.innerHTML += "<br/>" + pesan ;
+	form.reset();
+	return false;
+};
+</script>
+</body>
+</html>
+
+<link rel="stylesheet" type="text/css" href="">
